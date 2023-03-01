@@ -15,7 +15,6 @@ import ru.Cherkasov.project.repositories.ExchangeTransactionRepository;
 import ru.Cherkasov.project.repositories.InOutTransactionRepository;
 import ru.Cherkasov.project.repositories.UserRepository;
 
-import java.lang.reflect.Method;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.HashMap;
@@ -67,7 +66,7 @@ public class AccountService {
         User newUserEntry = new User(reqBody.getEmail(), reqBody.getUsername());
         newUserEntry.setSecretKey(UUID.randomUUID().toString());
         userRepository.save(newUserEntry);
-        retval.put("secretKey", newUserEntry.getSecretKey().toString());
+        retval.put("secret_key", newUserEntry.getSecretKey().toString());
         return retval;
     }
 
